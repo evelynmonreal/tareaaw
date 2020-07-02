@@ -1,43 +1,49 @@
-body {font-family: Arial, Helvetica, sans-serif;}
+/*
+font-family: 'Fredoka One', cursive;
+font-family: 'MuseoModerno', cursive;
+font-family: 'Yellowtail', cursive;
+*/
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+#tipo1{font-family: 'Fredoka One', cursive; font-size: 2em;}
+#tipo2{font-family: 'MuseoModerno', cursive; font-size: 2em;}
+#tipo3{font-family: 'Yellowtail', cursive; font-size: 2em;}
+
+#icon{ height: 50px; width: 40px;}
+
+*{margin: 0; padding: 0;}
+
+body{
+    font: 12px;
+    
+    font-family: 'Pangolin', cursive;
+    background: #f69e7b;
+    background-size: cover;
+    
 }
 
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+#contenido{
+    width: 60%;
+     height: auto;
+    display: block;
+    margin: 80px auto;
+    background: #fff;
+    border: 10px solid #eedad1;
+    padding: 20px 5%;
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
 }
 
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+#tarjeta{
+    width: 30%;
+    height: auto;
+    min-height: 350px;
+    display: none;
+    margin: 80px auto;
+    background: #fff;
+    border: 10px solid #eedad1;
+    padding: 20px 5%;
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
 }
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/*************************************************************/
-
