@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE.edge">
+        <title>Tarjeta Dinámica JS</title>
+        <link rel="stylesheet" href="css/estilo.css">
+       <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=MuseoModerno:wght@600&family=Yellowtail&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+        
+        <script>
+            //Tamaño del ejemplo
+        function cambiarTamanoEjemplo(){
+                var tam=document.getElementById("tamanoTxt").value;
+                document.getElementById("ejemploTexto").style.fontSize=tam+"em";
+            }
+        
+        function generarTarjeta(){
+          document.getElementById("tarjeta").style.display='block';
+              
+              //cual radio esta seleccionado de la imagen
+              var fondo;
+              if(document.getElementById("tipoImg1").checked)
+                  fondo=document.getElementById("tipoImg1").value;
+              else if(document.getElementById("tipoImg2").checked)
+                  fondo=document.getElementById("tipoImg2").value;
+              else fondo=document.getElementById("tipoImg3").value;
+            //agragar fondo
+            document.getElementById("tarjeta").style.backgroundImage="url('"+fondo+"')"; 
+            document.getElementById("tarjeta").style.backgroundRepeat="no-repeat"; 
+            
+            //Insertar texto
+           var titu= document.getElementById("tituloTxt").value;
+            document.getElementById("titulo").innerHTML=titu;
+            
+           var des= document.getElementById("descripconTxt").value;
+            document.getElementById("descripcion").innerHTML=des;
+            
+            var des= document.getElementById("personaTxt").value;
+            document.getElementById("persona").innerHTML=des;
+            
+            var des= document.getElementById("subtituloTxt").value;
+            document.getElementById("subtitulo").innerHTML=des; 
+            
+            var des= document.getElementById("subtituloTxt").value;
+            document.getElementById("remitente").innerHTML=des;
+            
+            //color texto
+             var c= document.getElementById("colorTxt").value;
+            document.getElementById("titulo").style.color=c;
+            
+            var c= document.getElementById("colorTxt").value;
+            document.getElementById("descripcion").style.color=c;
+            
+            var c= document.getElementById("colorTxt").value;
+            document.getElementById("persona").style.color=c; 
+            
+            var c= document.getElementById("colorTxt").value;
+            document.getElementById("subtitulo").style.color=c;
+            
+            var c= document.getElementById("colorTxt").value;
+            document.getElementById("remitente").style.color=c;
+           
+            //tamaño texto
+            var tam= document.getElementById("tamanoTxt").value;
+            document.getElementById("titulo").style.fontSize=tam+"em";
+            
+            //tipografía
+            var tipo;
+              if(document.getElementById("tipoTxt1").checked)
+                  tipo=document.getElementById("tipoTxt1").value;
+              else if(document.getElementById("tipoTxt2").checked)
+                  tipo=document.getElementById("tipoTxt2").value;
+              else tipo=document.getElementById("tipoTxt3").value;
+            
+            //agragar tipografía
+            document.getElementById("titulo").style.fontFamily=tipo;
+            document.getElementById("descripcion").style.fontFamily=tipo; 
+            document.getElementById("persona").style.fontFamily=tipo;
+            document.getElementById("subtitulo").style.fontFamily=tipo;
+            document.getElementById("remitente").style.fontFamily=tipo;
+            
+            //ocultar Zona Configuración
+             document.getElementById("contenido").style.display='none';
+            
+            //media, no me funciono :c
+            if(document.getElementById("tema1").checked)
+                musica=document.getElementById("tema1").value;
+            else if(document.getElementById("tema2").checked)
+                musica=document.getElementById("tema2").value;
+           else musica=document.getElementById("tema3").value;
+          
+        }   
+        </script>
+    </head>
+    
+    <body>
+        <articule id="contenido">
+            <h1>Creando una tarjeta</h1>
+            <br>
+            
+            <h2>Elige un tema - Musica</h2>
+            <br>
+            <input type="radio" name="tema" class="tema1" id="san_va" checked value="media/Love.mp3">
+            <label for="san_va">San Valentín</label> 
+            
+            <input type="radio" name="tema" class="tema2" id="mot" value="media/Believer.mp3">
+            <label for="mot">Motivación</label>
+            
+            <input type="radio" name="tema" class="tema3" id="cumple" value="media/Happy.mp3">
+            <label for="cumple">Cumpleaños</label>
+            <br><br>
+            
+            <h2>Elige una imagen</h2>
+            <input type="radio" name="tipoImg" id="tipoImg1" value="img/img1.jpg">
+            <img src="img/img1.jpg" height="150" width="150">
+            <input type="radio" name="tipoImg" id="tipoImg2" value="img/img2.jpg"> 
+            <img src="img/img2.jpg" height="150" width="150">
+            <input type="radio" name="tipoImg" id="tipoImg3" value="img/img3.png">
+            <img src="img/img3.png" height="150" width="150">
+            <br><br>
+            
+            <h2>Destinatario</h2>
+            <input type="persona" id="personaTxt">
+            <br><br>
+            
+            <h2>Agrega un titulo</h2>
+            <input type="text" id="tituloTxt">
+            <br><br>
+            
+            <h2>Subtitulo</h2>
+            <input type="subtitulo " id="subtituloTxt">
+            <br><br>
+            
+            <h2>Agrega un mensaje </h2>
+            <textarea id="descripconTxt" cols="30" rows="5"></textarea>
+            <br><br>
+            
+             <h2>Remitente</h2>
+            <input type="remitente" id="remitenteTxt">
+            <br><br>
+            <h2>Formato de texto</h2>
+            <label for="colorTxt">Color: </label>
+                <input type="color" id="colorTxt">
+            <br>
+            <label for="colorTxt">Tamaño de letra:</label>
+            <input type="range" id="tamanoTxt" min="1" max="5" onchange="cambiarTamanoEjemplo()">
+            
+            <label id="ejemploTexto">Ejemplo</label><br><br>
+            <label>Tipografía</label>
+            <br>
+            <br>
+                <input type="radio" name="tipoTxt" id="tipoTxt1" checked value="Fredoka One">
+                <label id="tipo1">Fredoka One</label>
+                
+                <input type="radio" name="tipoTxt" id="tipoTxt2" checked value="MuseoModerno">
+                <label id="tipo2">MuseoModerno</label>
+          
+                <input type="radio" name="tipoTxt" id="tipoTxt3" checked value="Yellowtail">
+                <label id="tipo3">Yellowtail</label><br>
+                <br>
+            
+            <img src="img/icon.png" onclick="generarTarjeta()" id="icon">
+            <br>
+            <br>
+            
+        </articule>
+        
+         <article id="tarjeta">
+            <h2 id="persona"></h2>
+            <h1 id="titulo"></h1>
+            <h2 id="subtitulo"></h2>
+            <h3 id="descripcion"></h3>
+            <h2 id="remitente"></h2>
+        </article>
+    </body>
+</html>
