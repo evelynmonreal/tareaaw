@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Tarea 3</title>
+    <script>
+        function cambiarTextos(){
+            //Ingresar su nombre y guardarlo en una variable
+            nombre=prompt("Ingrese su nombre");
+            document.getElementById("tex").innerHTML=nombre;
+		}
+	</script>
+</head>
+    <body>
+        <!-- Texto a modificar -->
+        <h1 id="tex">Usuario</h1>
+        <!-- onclick: ejecutar el codigo -->
+        <input type="button" value="Enviar" onclick="cambiarTextos()">
+    </body>
+</html>
